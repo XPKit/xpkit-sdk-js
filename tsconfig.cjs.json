@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "outDir": "./dist/cjs",
+    "declaration": true,
+  },
+  "tsc-alias": {
+    "resolveFullPaths": true,
+    "verbose": false
+  },
+  "include": ["src/index.ts", "src/resources/index.ts"],
+  "exclude": ["node_modules"]
+}

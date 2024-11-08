@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "outDir": "./dist/esm",
+    "declaration": true,
+    "moduleResolution": "node",
+  },
+  "tsc-alias": {
+    "resolveFullPaths": true,
+    "verbose": false
+  },
+  "include": ["src/index.ts", "src/resources/index.ts"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,64 @@
+{
+  "name": "xpkit-sdk",
+  "version": "1.0.0",
+  "description": "Helper functions to interact with XPKit API endpoints.",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js"
+    },
+    "./resources": {
+      "require": "./dist/cjs/resources/index.js",
+      "import": "./dist/esm/resources/index.js"
+    }
+  },
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "lint": "eslint --fix",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "ci": "npm run lint && npm run coverage",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -p tsconfig.cjs.json && tsc-alias -p tsconfig.cjs.json && echo '{\"type\": \"commonjs\"}' > dist/cjs/package.json",
+    "build:esm": "tsc -p tsconfig.esm.json && tsc-alias -p tsconfig.esm.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XPKit/xpkit-sdk-js.git"
+  },
+  "keywords": [
+    "xpkit"
+  ],
+  "author": "Team XPKit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XPKit/xpkit-sdk-js/issues"
+  },
+  "homepage": "https://developer.xpkit.com",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@stylistic/eslint-plugin-ts": "^2.10.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.0.0",
+    "@types/node-localstorage": "^1.3.3",
+    "@vitest/coverage-v8": "^2.1.3",
+    "eslint": "^9.13.0",
+    "globals": "^15.11.0",
+    "tsc-alias": "^1.8.10",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.12.2",
+    "vitest": "^2.1.1"
+  },
+  "dependencies": {
+    "pkce-challenge": "^4.1.0"
+  }
+}
